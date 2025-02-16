@@ -1,0 +1,69 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath, amssymb, amsfonts, amsthm}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{soul}
+
+% Definir estilos de teoremas con amsthm
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[section]
+\newtheorem{remark}{Observación}[section]
+
+\theoremstyle{plain} % Para teoremas en negrita y cursiva
+\newtheorem{theorem}{Teorema}[section]
+
+\title{Cálculo Integral}
+\author{Pablo Pardo Cotos}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Tema 1: Teoría de la Integral}
+
+\begin{definition}[Rectángulo n-dimensional]
+    Un \textbf{rectángulo n-dimensional} en el espacio euclídeo \(\mathbb{R}^n\) es un conjunto de la forma:
+    \[
+    R = [a_1, b_1] \times [a_2, b_2] \times \dots \times [a_n, b_n] = 
+    \{ (x_1, x_2, \dots, x_n) \in \mathbb{R}^n : a_i \leq x_i \leq b_i, i = 1, 2, \dots, n \}.
+    \]
+\end{definition}
+
+\begin{definition}[Volumen de un rectángulo]
+El \textbf{volumen} de un rectángulo \( R \) en \(\mathbb{R}^n\) se define como:
+\[
+V(R) = \prod_{i=1}^{n} (b_i - a_i).
+\]
+\end{definition}
+
+\begin{definition}[Rectángulo degenerado]
+Si el volumen de \( R \) es \( 0 \), decimos que el rectángulo es \textbf{degenerado}.
+\end{definition}
+
+\begin{remark}
+El volumen de \( R_\delta \) es:
+\[
+V(R_\delta) = \prod_{i = 1}^{n} (b_i + \delta - a_i + \delta) = \prod_{i = 1}^{n} (b_i - a_i + 2\delta) = V(R) + 2n\delta.
+\]
+Tomando el límite cuando \( \delta \to 0 \), obtenemos:
+\[
+\lim_{\delta \to 0} V(R_\delta) = V(R).
+\]
+\end{remark}
+
+\begin{definition}[Medida exterior de Lebesgue]
+Sea \( A \subset \mathbb{R}^n \) un conjunto cualquiera, definimos la \textbf{medida exterior de Lebesgue} como:
+\[
+m^*(A) = \inf \left\{ \sum_{i = 1}^{\infty} V(R_i) : A \subset \bigcup_{i = 1}^{\infty} R_i \right\}.
+\]
+\end{definition}
+
+\begin{remak}
+    \begin{enumerate}
+        \item Si $m^{*}(A) = +infty \iff \forall (R_j)_{j \in \mathbb{N}}$ sucesión de rectángulos n-dimensionales con $A \subset \bigcup_{j \in \mathbb{N}} R_j$ se tiene que $\sum_{j = 1}^{\infty} V(R_j) = +\infty$.
+\end{remark}
+
+\end{document}
